@@ -80,12 +80,6 @@ with mp_pose.Pose(static_image_mode=False) as pose:
 
 
         cv2.imshow("Frame", frame)
-        if isFullscreen:
-            # Busca la ventana con título "Open3D"
-            window_id = os.popen("wmctrl -l | grep 'Frame' | awk '{print $1}'").read().strip()
-            # Cambia la ventana a pantalla completa
-            os.system(f"wmctrl -ir {window_id} -b add,fullscreen")
-            isFullscreen = False
         if cv2.waitKey(1) & 0xFF == 27:
             break
 

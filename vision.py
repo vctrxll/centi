@@ -58,7 +58,6 @@ with mp_pose.Pose(static_image_mode=False) as pose:
 
         # Obtiene las dimensiones del frame (alto, ancho y canales de color)
         height, width, _ = frame.shape
-
         # Convierte la imagen de BGR (formato por defecto de OpenCV) a RGB (formato que utiliza MediaPipe)
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
@@ -84,9 +83,9 @@ with mp_pose.Pose(static_image_mode=False) as pose:
             p24 = (int(landmarks[24].x * width), int(landmarks[24].y * height))
 
             # Dibuja una línea verde entre los puntos 12 y 23
-            cv2.line(frame, p12, p23, (0, 255, 0), 2)
+            #cv2.line(frame, p12, p23, (0, 255, 0), 2)
             # Dibuja una línea roja entre los puntos 11 y 24
-            cv2.line(frame, p11, p24, (0, 0, 255), 2)
+            #cv2.line(frame, p11, p24, (0, 0, 255), 2)
 
             # Calcula el punto de intersección entre las dos líneas dibujadas
             intersection = line_intersection(p12, p23, p11, p24)
